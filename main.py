@@ -62,6 +62,16 @@ def compile(program):
                 if disassemble[1] != 0:
                     instruct_pointer += int(disassemble[2])
                     continue
+        elif disassemble[0] == "jnp":
+            # jump if not positibe
+            if disassemble[1] in memory:
+                if memory[disassemble[1]] > 0:
+                    instruct_pointer += int(disassemble[2])
+                    continue
+            else:
+                if disassemble[1] > 0:
+                    instruct_pointer += int(disassemble[2])
+                    continue
         elif disassemble[0] == "jmp":
             instruct_pointer = int(disassemble[1])
             continue
