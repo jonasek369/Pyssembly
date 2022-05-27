@@ -170,7 +170,7 @@ if args.file is not None:
         stack = file_content.splitlines()
 
 if args.compile or args.comp:
-    with open("main.cpp", "w") as file:
+    with open("../pysm/main.cpp", "w") as file:
         x = compile(stack, True, datatype)
         file.write(x)
 
